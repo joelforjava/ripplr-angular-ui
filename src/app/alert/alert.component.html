@@ -1,0 +1,4 @@
+<md-toolbar *ngIf="message" 
+     [ngClass]="{'md-tall': message, 'md-accent': message.type === 'success', 'md-warn': message.type === 'error' }">
+     {{ message.text }}
+</md-toolbar>

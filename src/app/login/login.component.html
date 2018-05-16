@@ -1,0 +1,27 @@
+<md-toolbar color="primary">
+  <span>Log In to Ripplr</span>
+</md-toolbar>
+<md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+  <md-card-title>
+    <div class="md-toolbar-tools">
+      <h2>Login Form</h2>
+    </div>
+  </md-card-title>
+    <form name="login-form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+  <md-card-content>
+      <md-input-container class="full-width">
+        <label for="username">Username</label>
+        <input mdInput type="text" name="username" [(ngModel)]="model.username" #username="ngModel" required/>
+        <div *ngIf="f.submitted && !username.valid">Username is required</div>
+      </md-input-container>
+      <md-input-container class="full-width">
+        <label for="password">Password</label>
+        <input mdInput type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required/>
+        <div *ngIf="f.submitted && !password.valid">Password is required</div>
+      </md-input-container>
+  </md-card-content>
+  <md-card-actions>
+    <button [disabled]="loading" md-raised-button> Login </button>
+  </md-card-actions>
+    </form>
+</md-card>
